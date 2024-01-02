@@ -4,7 +4,7 @@ var speed = 100
 
 var player_state
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var direction = Input.get_vector("left", "right", "up", "down")
 
 	if direction.x == 0 and direction.y == 0:
@@ -31,14 +31,14 @@ func play_anim(dir):
 			$AnimatedSprite2D.play("s-walk")
 		if dir.x == -1:
 			$AnimatedSprite2D.play("w-walk")
-		
-		if dir.x > 0.5 and dir.y < 0.5:
+			
+		if dir.x > 0.5 and dir.y < -0.5:
 			$AnimatedSprite2D.play("ne-walk")
 		if dir.x > 0.5 and dir.y > 0.5:
 			$AnimatedSprite2D.play("se-walk")
 		if dir.x < -0.5 and dir.y > 0.5:
 			$AnimatedSprite2D.play("sw-walk")
-		if dir.x < -0.5 and dir.y < 0.5:
+		if dir.x < -0.5 and dir.y < -0.5:
 			$AnimatedSprite2D.play("nw-walk")
 
 func player():

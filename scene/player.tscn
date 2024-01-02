@@ -453,7 +453,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"e-walk",
-"speed": 2.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -552,9 +552,16 @@ script = ExtResource("1_2ck5b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_csro2")
-animation = &"e-walk"
-frame_progress = 0.638619
+animation = &"ne-walk"
+frame_progress = 0.545144
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_cpa7c")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.5, 2.5)
+limit_left = -389
+limit_top = -228
+limit_right = 425
+limit_bottom = 261
