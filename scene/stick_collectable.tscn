@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://366lj2trgs2h"]
+
+[ext_resource type="Script" path="res://inventory/stick_collectable.gd" id="1_p2a17"]
+[ext_resource type="Texture2D" uid="uid://b7nckwiwnm6uw" path="res://images/stick-icon.png" id="2_44kgu"]
+[ext_resource type="Resource" uid="uid://bgcdfskw2dkol" path="res://inventory/items/stick.tres" id="2_ushqr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_efsn8"]
+radius = 16.7631
+
+[node name="stick_collectable" type="StaticBody2D"]
+script = ExtResource("1_p2a17")
+item = ExtResource("2_ushqr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_44kgu")
+
+[node name="interactable_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable_area"]
+shape = SubResource("CircleShape2D_efsn8")
+
+[connection signal="body_entered" from="interactable_area" to="." method="_on_interactable_area_body_entered"]

@@ -6,6 +6,7 @@ var player_state
 
 @export var inv: Inv
 
+
 func _physics_process(_delta):
 	var direction = Input.get_vector("left", "right", "up", "down")
 
@@ -46,3 +47,6 @@ func play_anim(dir):
 func player():
 	pass
 
+func collect(item):
+	inv.insert(item)
+s
