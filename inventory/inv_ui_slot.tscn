@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://csyvjwg1ffwmo"]
+
+[ext_resource type="Texture2D" uid="uid://hj7tw3tte0la" path="res://images/inventory-slot.png" id="1_hjvts"]
+[ext_resource type="Script" path="res://inventory/inv_ui_slot.gd" id="1_kvo2e"]
+
+[sub_resource type="GDScript" id="GDScript_ec3o5"]
+script/source = "extends Sprite2D
+
+@onready var item_visual: Sprite2D = $item_display
+
+func update(item: InvItem):
+	if !item:
+		item_visual.visible = false
+	else:
+		item_visual.visible = true
+		item_visual.texture = item.texture
+
+"
+
+[node name="inv_UI_slot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(16, 16)
+offset_right = 16.0
+offset_bottom = 16.0
+script = ExtResource("1_kvo2e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_hjvts")
+centered = false
+
+[node name="item_display" type="Sprite2D" parent="."]
+script = SubResource("GDScript_ec3o5")
