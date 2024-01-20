@@ -287,3 +287,7 @@ position = Vector2(176, 92)
 position = Vector2(-13, 179)
 
 [node name="player" parent="." instance=ExtResource("1_wtyi7")]
+
+[node name="collisions" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions"]

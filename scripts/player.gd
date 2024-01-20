@@ -49,8 +49,9 @@ func _physics_process(_delta):
 	play_anim(direction)
 	
 func play_anim(dir):
-	if !$bow_equiped:
+	if !bow_equiped:
 				##print(dir)
+		speed = 100
 		if player_state == "idle":
 			$AnimatedSprite2D.play("idle")
 		if player_state == "walking":
@@ -72,8 +73,25 @@ func play_anim(dir):
 			if dir.x < -0.5 and dir.y < -0.5:
 				$AnimatedSprite2D.play("nw-walk")
 				
-	if $bow_equiped:
-		pass
+	if bow_equiped:
+		speed = 0
+		if mouse_loc_from_player.x >= -25 and mouse_loc_from_player.x <= 25 and mouse_loc_from_player.y < 0:
+			$AnimatedSprite2D.play("02_n-attack")
+		if mouse_loc_from_player.y >= -25 and mouse_loc_from_player.y <= 25 and mouse_loc_from_player.x > 0:
+			$AnimatedSprite2D.play("02_e-attack")
+		if mouse_loc_from_player.x >= -25 and mouse_loc_from_player.x <= 25 and mouse_loc_from_player.y > 0:
+			$AnimatedSprite2D.play("02_s-attack")
+		if mouse_loc_from_player.y >= -25 and mouse_loc_from_player.y <= 25 and mouse_loc_from_player.x < 0:
+			$AnimatedSprite2D.play("02_w-attack")
+		
+		if mouse_loc_from_player.x >= -25 and mouse_loc_from_player.y <= -25:
+			$AnimatedSprite2D.play("02_ne-attack")
+		if mouse_loc_from_player.x >= 0.5 and mouse_loc_from_player.y >= 25:
+			$AnimatedSprite2D.play("02_se-attack")
+		if mouse_loc_from_player.x <= -0.5 and mouse_loc_from_player.y >= 25:
+			$AnimatedSprite2D.play("02_ws-attack")
+		if mouse_loc_from_player.x <= -25 and mouse_loc_from_player.y <= -25:
+			$AnimatedSprite2D.play("02_nw-attack")
 				
 func player():
 	pass
