@@ -326,6 +326,7 @@ animations = [{
 radius = 5.09902
 
 [node name="player" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_2ck5b")
 inv = ExtResource("2_k4n1i")
 
