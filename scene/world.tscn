@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dg62n44ovlf6d"]
+[gd_scene load_steps=14 format=3 uid="uid://dg62n44ovlf6d"]
 
 [ext_resource type="PackedScene" uid="uid://c1pte6y01ynbg" path="res://scene/player.tscn" id="1_wtyi7"]
 [ext_resource type="Texture2D" uid="uid://dyi60urgnrkd2" path="res://images/survivalgame-terrian-cliffs.png" id="2_t02rk"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dg1gjkyq8ilmm" path="res://images/survivalgame-trees.png" id="5_h8s1f"]
 [ext_resource type="PackedScene" uid="uid://c8ct3r6e11wum" path="res://scene/apple_tree.tscn" id="6_8ig3r"]
 [ext_resource type="PackedScene" uid="uid://366lj2trgs2h" path="res://scene/stick_collectable.tscn" id="6_antdl"]
+[ext_resource type="PackedScene" uid="uid://bkrrbgkuysqe5" path="res://scene/slime.tscn" id="8_gn8i0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qkh4r"]
 texture = ExtResource("2_t02rk")
@@ -775,3 +776,9 @@ polygon = PackedVector2Array(-399, 213, -44, 212, -12, 230, -11, 279, -400, 280)
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="collisions"]
 polygon = PackedVector2Array(-387, 213, -389, 40, -388, -228, 427, -226, 425, 213, 73, 215, 49, 237, 48, 271, -14, 271, -12, 279, 440, 280, 440, -242, -402, -241, -403, 219, -397, 220)
+
+[node name="slime" parent="." instance=ExtResource("8_gn8i0")]
+position = Vector2(139, 35)
+
+[node name="slime2" parent="." instance=ExtResource("8_gn8i0")]
+position = Vector2(92, 169)
